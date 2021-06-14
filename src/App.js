@@ -6,6 +6,7 @@ import { getStudents } from './services/students';
 function App () {
 
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect (() => {
     let mounted = true;
@@ -13,11 +14,17 @@ function App () {
     getStudents().then((data) => {
       if (mounted) {
         setData(data);
+        setIsLoading(false);
       }
     });
 
     return () => mounted = false;
   }, []);
+
+
+  if (isLoading) {
+    return <>Loading ...</>
+  }
 
 
   return (
