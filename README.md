@@ -9,11 +9,11 @@ Use the following command in the root directory to install the necessary npm pac
     npm install
 
 ## Linting & Testing
-Command for linting
+Command for linting:
 
     npm run lint
 
-Commmand for testing
+Tests are placed in the "/src/\_\_tests__/" folder. Commmand for testing all of them:
 
     npm test
 
