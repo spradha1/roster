@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Student from './components/Student';
 import './App.css';
 import { getStudents, filterStudents } from './services/students';
 
@@ -36,32 +37,16 @@ function App () {
 
         <div id="searchName">
           <input 
-            type="text" 
+            type="text"
             id="searchNameInput"
             placeholder="Search by name"
-            onChange={ (e) => setFilteredData(filterStudents(data, e.target.value, "tag")) }
+            onChange={ (e) => setFilteredData(filterStudents(data, e.target.value, "")) }
           />
         </div>
-
         <div id="studentsContainer">
           {filteredData.map((e, idx) => {
-            // Average of grades
-            const reducer = (accumulator, currentValue) => parseInt(accumulator) + parseInt(currentValue);  
-            let avg = e.grades.reduce(reducer) / e.grades.length;
-
             return (
-              <div className="student" key={idx}>
-                <div className="imgBox"><img src={e.pic} alt="Student" /></div>
-                <div className="infoBox">
-                  <div className="studentName">{e.firstName.toUpperCase()} {e.lastName.toUpperCase()}</div>
-                  <div className="otherInfo">
-                    <span>Email: {e.email}</span><br/>
-                    <span>Company: {e.company}</span><br/>
-                    <span>Skill: {e.skill}</span><br/>
-                    <span>Average: {avg}%</span>
-                  </div>
-                </div>
-              </div>
+              <Student bio={e} key={idx} />
             )
           })}
         </div>
