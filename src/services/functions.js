@@ -14,10 +14,19 @@ export async function getStudents() {
 export function filterStudents (data, name, tag) {
 
   let loName = name.trim().toLowerCase();
+  let loTag = tag.trim().toLowerCase();
 
-  if (loName !== "") {
+  data = data.filter(student => {
+    return student.firstName.concat(' ', student.lastName).toLowerCase().includes(loName);
+  });
+
+  if (loTag.length > 0) {
     data = data.filter(student => {
-      return student.firstName.toLowerCase().includes(loName) || student.lastName.toLowerCase().includes(loName);
+      for (let t=0; t<student.tags.length; t++) {
+        if (student.tags[t].toLowerCase().includes(loTag))
+          return true;
+      }
+      return false;
     });
   }
 

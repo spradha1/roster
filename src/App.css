@@ -7,38 +7,45 @@ html, body, #root, .App {
   position: absolute;
   display: block;
   width: 60%;
-  height: 70%;
-  top: 15%;
+  height: 80%;
+  top: 10%;
   left: 20%;
   font-family: 'Raleway';
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgb(90, 90, 90);
+  box-shadow: 0 2px 5px rgb(150, 150, 150);
 }
 
 
-#searchName {
+#search {
   position: fixed;
   width: inherit;
-  border-bottom: 0.8px solid rgb(233, 233, 233);
   z-index: 5;
 }
 
-#searchNameInput {
-  width: 100%;
+#searchName, #searchTag {
+  width: calc(100% - 1em);
   box-sizing: border-box;
   border: none;
-  font-size: 1em;
-  padding: 0.5em;
+  margin: 0 0.5em;
+  padding: 10px 0;
+  font-size: 15px;
+  font-family: inherit;
+  border-bottom: 1px solid rgb(219, 219, 219);
 }
 
-#searchNameInput:focus {
+#searchTag {
+  top: 33px;
+}
+
+#searchName:focus, #searchTag:focus {
   outline: none;
+  border-bottom: 1px solid rgb(167, 167, 167);
 }
 
 
 #studentsContainer {
-  height: calc(100% - 2em);
-  margin-top: 2em;
+  height: calc(100% - 77.2px);
+  margin-top: 77.2px;
   overflow-y: auto;
   -ms-overflow-style: none; /* Hide scrollbar for IE, Edge */
   scrollbar-width: thin;    /* Firefox */
@@ -60,7 +67,7 @@ html, body, #root, .App {
 }
 #studentsContainer::-webkit-scrollbar-thumb {
   width: 5px !important;
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(240, 240, 240);
   border-radius: 10px;
 }
 #studentsContainer::-webkit-scrollbar-thumb:hover {
@@ -68,3 +75,16 @@ html, body, #root, .App {
 }
 
 /* ****************************************** */
+
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+
+  .container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
