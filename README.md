@@ -1,7 +1,7 @@
 # roster
 
 ## Description
-This repository holds a web application to view a roster of students retrieved from https://api.hatchways.io/assessment/students.
+This repository holds a web application to view a roster of students retrieved from https://api.hatchways.io/assessment/students. The application allows you to search entities by their names and also by tags that the user themselves can assign to the entities.
 
 ## Installation & Deployment
 Download or clone the repository and navigate to the root folder on a terminal. Use the following command in the root directory to install the necessary npm pacakages.
